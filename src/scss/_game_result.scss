@@ -1,3 +1,4 @@
+@import "variable";
 .game_result_box {
   display: flex;
   flex-flow: row;
@@ -24,6 +25,7 @@
         background-color: #F9F9F9;
         border-radius: 8px;
         padding: 8px;
+        font-size: 16px;
       }
     }
   }

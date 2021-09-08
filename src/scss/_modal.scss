@@ -1,0 +1,58 @@
+@import "variable";
+
+.btn_rule {
+  border-radius: 8px;
+  border: solid 3px #5B6A82;
+  padding: 6px 32px;
+  background-color: transparent;
+  font-size: 16px;
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  z-index: 999;
+  color: #F9F9F9;
+  font-weight: $font_bold;
+  text-decoration: none;
+  &:hover {
+    color: #F9F9F9;
+  }
+}
+
+.custom_modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  .modal_bg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.4);
+    position: absolute;
+    z-index: 1;
+  }
+  .modal_content {
+    background-color: #F9F9F9;
+    position: absolute;
+    max-width: 100vw;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 480px;
+    padding: 48px 32px;
+    z-index: 999;
+    >h1 {
+      font-weight: $font_bold;
+      text-align: left;
+      margin-bottom: 16px;
+      font-size: 48px;
+    }
+    .close_btn {
+      position: absolute;
+      z-index: 1;
+      right: 32px;
+      top: 32px;
+
+    }
+  }
+}

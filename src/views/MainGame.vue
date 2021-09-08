@@ -3,6 +3,17 @@
         <ScoreBoard />
         <GamePicker v-if="phase === GamePhase.Selecting" />
         <GameResult v-if="phase === GamePhase.Result" />
+        <a class="btn_rule" @click.prevent="handleShowRule">RULES</a>
+        <div class="custom_modal" v-if="showModal">
+            <div class="modal_bg"></div>
+            <div class="modal_content">
+                <a @click.prevent="handleCloseModal" class="close_btn">
+                    <img src="/images/icon-close.svg" />
+                </a>
+                <h1>RULES</h1>
+                <img src="/images/image-rules-bonus.svg" />
+            </div>
+        </div>
     </div>
 </template>
 
@@ -23,5 +34,15 @@ import GameResult from "@/components/GameResult.vue";
 export default class MainGame extends Vue {
     readonly GamePhase: GamePhase = GamePhase
     phase!: GamePhase
+
+    showModal: boolean = false;
+
+    handleShowRule() {
+        this.showModal = true;
+    }
+
+    handleCloseModal() {
+        this.showModal = false;
+    }
 }
 </script>

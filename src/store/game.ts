@@ -60,9 +60,6 @@ const actions: ActionTree<GameState, RootState> = {
             result = GameResultState.Lose;
             commit('setLoseInRow', state.loseInRow + 1)
         }
-        console.log(userSelection);
-        console.log(botSelection);
-        console.log(result);
         commit('setGameResult', result);
     },
     replayGame: ({commit, state}) => {
