@@ -1,11 +1,15 @@
 @import "variable";
 @import "score_board";
+@import "game_option";
+
+body {
+  background-color: #1A294A;
+}
 
 #app {
   margin: 0px auto;
   font-family: $font_main;
   padding-top: 48px;
-  background-color: black;
   min-height: 100vh;
   .container {
     width: 1366px;
