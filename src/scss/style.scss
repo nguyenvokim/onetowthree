@@ -35,6 +35,6 @@ body {
 .mobile_only {
   display: none !important;
   @media screen and (max-width: $screen-sm) {
-    display: block;
+    display: block !important;
   }
 }

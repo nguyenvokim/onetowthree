@@ -1,32 +1,33 @@
 <template>
-    <div class="game_result_box">
-        <div class="user_result result_box">
-            <div class="title">YOU PICKED</div>
-            <div class="result">
-                <GamePickerOption :game-option="userSelected" :allow-click="false" />
-            </div>
-        </div>
-        <transition name="gameresult">
-            <div v-if="showOptionNext" class="overall_result overall_result_box desktop_only">
-                <div class="title">
-                    {{resultText}}
-                </div>
-                <div class="action">
-                    <a @click.prevent="handleRetry">PLAY AGAIN</a>
+    <div>
+        <div class="game_result_box">
+            <div class="user_result result_box">
+                <div class="title">YOU PICKED</div>
+                <div class="result">
+                    <GamePickerOption :game-option="userSelected" :allow-click="false" />
                 </div>
             </div>
-        </transition>
-        <div class="bot_result result_box">
-            <div class="title">THE HOURSE PICKED</div>
-            <div class="result">
-                <transition name="fade">
-                    <GamePickerOption v-if="showBotResult" :game-option="botSelected" :allow-click="false" />
-                </transition>
+            <transition name="gameresult">
+                <div v-if="showOptionNext" class="overall_result overall_result_box desktop_only">
+                    <div class="title">
+                        {{resultText}}
+                    </div>
+                    <div class="action">
+                        <a @click.prevent="handleRetry">PLAY AGAIN</a>
+                    </div>
+                </div>
+            </transition>
+            <div class="bot_result result_box">
+                <div class="title">THE HOURSE PICKED</div>
+                <div class="result">
+                    <transition name="fade">
+                        <GamePickerOption v-if="showBotResult" :game-option="botSelected" :allow-click="false" />
+                    </transition>
+                </div>
             </div>
         </div>
-
         <transition name="gameresultmobile">
-            <div v-if="showOptionNext" class="overall_result overall_result_box mobile_only">
+            <div v-if="showOptionNext" class="overall_result overall_result_box mobile_only" style="margin-top: 32px">
                 <div class="title">
                     {{resultText}}
                 </div>

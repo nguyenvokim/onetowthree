@@ -52,6 +52,9 @@
     font-size: 64px;
     font-weight: $font_bold;
     color: #F9F9F9;
+    @media screen and (max-width: $screen-sm) {
+      font-size: 32px
+    }
   }
   .action {
     text-align: center;
