@@ -1,0 +1,35 @@
+@import "variable";
+
+.score_board_box {
+  border: solid 3px #5B6A82;
+  border-radius: 16px;
+  max-width: 700px;
+  margin: auto;
+  padding: 20px 32px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  >img {
+
+  }
+  .score_box {
+    min-width: 150px;
+    background-color: white;
+    border-radius: 12px;
+    text-align: center;
+    font-family: $font_main;
+    .title {
+      color: #697BD3;
+      font-size: 20px;
+      line-height: 1.2;
+      padding-top: 16px;
+    }
+    .score {
+      font-weight: $font_bold;
+      color: #5E5C66;
+      font-size: 64px;
+      line-height: 1.2;
+    }
+  }
+}
