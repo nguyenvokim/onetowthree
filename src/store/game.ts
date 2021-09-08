@@ -37,8 +37,8 @@ const mutations: MutationTree<GameState> = {
     setScore: (state, payload: number) => {
         state.score = payload;
     },
-    setLowInRow: (state, payload: number) => {
-        state.score = payload;
+    setLoseInRow: (state, payload: number) => {
+        state.loseInRow = payload;
     },
     setGameResult: (state, payload: GameResultState) => {
         state.gameResult = payload;
@@ -54,14 +54,15 @@ const actions: ActionTree<GameState, RootState> = {
         let result: GameResultState = GameResultState.Draw;
         if (resultMap[userSelection].includes(botSelection)) {
             result = GameResultState.Win;
-            commit('setScore', state.score + 1);
-            commit('setLowInRow', 0)
+            commit('setLoseInRow', 0)
         }
         if (resultMap[botSelection].includes(userSelection)) {
             result = GameResultState.Lose;
-            commit('setScore', state.score - 1);
-            commit('setLowInRow', state.loseInRow + 1)
+            commit('setLoseInRow', state.loseInRow + 1)
         }
+        console.log(userSelection);
+        console.log(botSelection);
+        console.log(result);
         commit('setGameResult', result);
     },
     replayGame: ({commit, state}) => {

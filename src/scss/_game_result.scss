@@ -1,0 +1,55 @@
+.game_result_box {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  margin-top: 128px;
+  .user_result {
+    width: 33%;
+  }
+  .overall_result {
+    width: 33%;
+    align-self: center;
+    overflow: hidden;
+    .title {
+      text-align: center;
+      font-size: 64px;
+      font-weight: $font_bold;
+      color: #F9F9F9;
+    }
+    .action {
+      text-align: center;
+      >a {
+        display: inline-block;
+        min-width: 220px;
+        background-color: #F9F9F9;
+        border-radius: 8px;
+        padding: 8px;
+      }
+    }
+  }
+  .bot_result {
+    width: 33%;
+  }
+}
+.result_box {
+  .title {
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    font-weight: $font_bold;
+  }
+  .result {
+    display: flex;
+    justify-content: center;
+    margin-top: 64px;
+  }
+}
+
+.gameresult-enter-active, .fgameresult-leave-active {
+  transition: width 0.5s;
+  width: 33% !important;
+}
+.gameresult-enter, .gameresult-leave-to {
+  width: 0% !important;
+}
+

@@ -4,6 +4,11 @@
   width: 150px;
   height: 150px;
   cursor: pointer;
+  &.big {
+    transform: scale(1.5);
+    cursor: auto;
+    transform-origin: center center;
+  }
   .circle {
     width: 100%;
     height: 100%;

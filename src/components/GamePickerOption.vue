@@ -1,5 +1,5 @@
 <template>
-    <div class="option_card" @click="handleClick">
+    <div :class="{option_card: true, big: !this.allowClick}" @click="handleClick">
         <div class="circle" :style="borderRadiusStyle">
             <img :src="imageUrl" />
         </div>
@@ -17,6 +17,7 @@ import {GameOption} from "@/models/enums";
 export default class GamePicker extends Vue {
     readonly GameOption: GameOption
     @Prop({type: String}) gameOption!: GameOption
+    @Prop({type: Boolean, default: true}) allowClick!: boolean
 
     get color(): string {
         let colours: Record<GameOption, string> = {
@@ -53,6 +54,9 @@ export default class GamePicker extends Vue {
     }
 
     handleClick() {
+        if (!this.allowClick) {
+            return
+        }
         this.$emit('select-option', this.gameOption)
     }
 }
