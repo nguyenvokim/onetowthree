@@ -49,7 +49,11 @@ const mutations: MutationTree<GameState> = {
 const actions: ActionTree<GameState, RootState> = {
     calcGameResult: ({commit, state}, userSelection: GameOption) => {
         commit('setUserSelected', userSelection);
-        const botSelection: GameOption = randomEnumValue(GameOption);
+        let botSelection: GameOption = randomEnumValue(GameOption);
+        //Hack if user lose 3 time in row, 3 should define as const
+        if (state.loseInRow === 3) {
+            botSelection = resultMap[userSelection][0];
+        }
         commit('setBotSelected', botSelection);
         let result: GameResultState = GameResultState.Draw;
         if (resultMap[userSelection].includes(botSelection)) {
