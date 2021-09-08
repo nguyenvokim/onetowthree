@@ -15,16 +15,21 @@
 import {Component, Vue} from "vue-property-decorator";
 import {GameOption, GamePhase} from "@/models/enums";
 import GamePickerOption from "@/components/GamePickerOption.vue";
+import {mapActions} from "vuex";
 
 @Component({
     components: {GamePickerOption},
-
+    methods: {
+        ...mapActions('game', ['calcGameResult'])
+    }
 })
 export default class GamePicker extends Vue {
     readonly GameOption: GameOption = GameOption
 
+    calcGameResult!: (gameOption: GameOption) => void;
+
     handleSelectOption(option: GameOption) {
-        console.log(option);
+        this.calcGameResult(option);
     }
 }
 </script>

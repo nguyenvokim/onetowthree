@@ -16,7 +16,7 @@ import {GameOption} from "@/models/enums";
 })
 export default class GamePicker extends Vue {
     readonly GameOption: GameOption
-    @Prop({type: Number}) gameOption!: GameOption
+    @Prop({type: String}) gameOption!: GameOption
 
     get color(): string {
         let colours: Record<GameOption, string> = {

@@ -1,13 +1,19 @@
 
 export enum GameOption {
-    Rock,
-    Paper,
-    Scissors,
-    Lizard,
-    Spock
+    Rock = 'Rock',
+    Paper = 'Paper',
+    Scissors = 'Scissors',
+    Lizard = 'Lizard',
+    Spock = 'Spock'
 }
 
 export enum GamePhase {
-    Selecting,
-    Result
+    Selecting = 'Selecting',
+    Result = 'Result'
+}
+
+export enum GameResultState {
+    Win = 'Win',
+    Lose = 'Lose',
+    Draw = 'Draw'
 }

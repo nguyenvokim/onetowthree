@@ -2,6 +2,7 @@
     <div class="container">
         <ScoreBoard />
         <GamePicker v-if="phase === GamePhase.Selecting" />
+        <GameResult v-if="phase === GamePhase.Result" />
     </div>
 </template>
 
@@ -11,9 +12,10 @@ import ScoreBoard from "@/components/ScoreBoard";
 import GamePicker from "@/components/GamePicker";
 import {GamePhase} from "@/models/enums";
 import {mapState} from "vuex";
+import GameResult from "@/components/GameResult.vue";
 
 @Component({
-    components: {GamePicker, ScoreBoard},
+    components: {GameResult, GamePicker, ScoreBoard},
     computed: {
         ...mapState('game', ['phase'])
     }
