@@ -1,5 +1,5 @@
 <template>
-    <div class="option_card">
+    <div class="option_card" @click="handleClick">
         <div class="circle" :style="borderRadiusStyle">
             <img :src="imageUrl" />
         </div>
@@ -50,6 +50,10 @@ export default class GamePicker extends Vue {
             default:
                 return '/images/icon-lizard.svg';
         }
+    }
+
+    handleClick() {
+        this.$emit('select-option', this.gameOption)
     }
 }
 </script>

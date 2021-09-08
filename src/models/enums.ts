@@ -6,3 +6,8 @@ export enum GameOption {
     Lizard,
     Spock
 }
+
+export enum GamePhase {
+    Selecting,
+    Result
+}
