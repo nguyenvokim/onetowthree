@@ -11,7 +11,10 @@
   justify-content: space-between;
   align-items: center;
   >img {
-
+    @media screen and (max-width: $screen-sm) {
+      display: block;
+      width: 64px;
+    }
   }
   .score_box {
     min-width: 150px;
@@ -19,17 +22,28 @@
     border-radius: 12px;
     text-align: center;
     font-family: $font_main;
+    @media screen and (max-width: $screen-sm) {
+      min-width: 80px;
+    }
     .title {
       color: #697BD3;
       font-size: 20px;
       line-height: 1.2;
       padding-top: 16px;
+      @media screen and (max-width: $screen-sm) {
+        font-size: 12px;
+        padding-top: 8px;
+      }
     }
     .score {
       font-weight: $font_bold;
       color: #5E5C66;
       font-size: 64px;
       line-height: 1.2;
+      @media screen and (max-width: $screen-sm) {
+        font-size: 32px;
+        padding-bottom: 8px;
+      }
     }
   }
 }

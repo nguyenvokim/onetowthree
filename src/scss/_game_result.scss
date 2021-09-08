@@ -4,33 +4,26 @@
   flex-flow: row;
   justify-content: center;
   margin-top: 128px;
+  @media screen and (max-width: $screen-sm) {
+    margin-top: 32px;
+    flex-flow: row wrap;
+  }
   .user_result {
     width: 33%;
+    @media screen and (max-width: $screen-sm) {
+      width: 50%;
+    }
   }
   .overall_result {
     width: 33%;
     align-self: center;
     overflow: hidden;
-    .title {
-      text-align: center;
-      font-size: 64px;
-      font-weight: $font_bold;
-      color: #F9F9F9;
-    }
-    .action {
-      text-align: center;
-      >a {
-        display: inline-block;
-        min-width: 220px;
-        background-color: #F9F9F9;
-        border-radius: 8px;
-        padding: 8px;
-        font-size: 16px;
-      }
-    }
   }
   .bot_result {
     width: 33%;
+    @media screen and (max-width: $screen-sm) {
+      width: 50%;
+    }
   }
 }
 .result_box {
@@ -39,11 +32,37 @@
     color: white;
     text-align: center;
     font-weight: $font_bold;
+    @media screen and (max-width: $screen-sm) {
+      font-size: 20px
+    }
   }
   .result {
     display: flex;
     justify-content: center;
     margin-top: 64px;
+    @media screen and (max-width: $screen-sm) {
+      margin-top: 16px;
+    }
+  }
+}
+
+.overall_result_box {
+  .title {
+    text-align: center;
+    font-size: 64px;
+    font-weight: $font_bold;
+    color: #F9F9F9;
+  }
+  .action {
+    text-align: center;
+    >a {
+      display: inline-block;
+      min-width: 220px;
+      background-color: #F9F9F9;
+      border-radius: 8px;
+      padding: 8px;
+      font-size: 16px;
+    }
   }
 }
 
@@ -52,6 +71,14 @@
   width: 33% !important;
 }
 .gameresult-enter, .gameresult-leave-to {
+  width: 0% !important;
+}
+
+.gameresultmobile-enter-active, .fgameresult-leave-active {
+  transition: width 0.5s;
+  width: 100% !important;
+}
+.gameresultmobile-enter, .gameresult-leave-to {
   width: 0% !important;
 }
 

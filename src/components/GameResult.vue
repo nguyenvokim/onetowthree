@@ -7,7 +7,7 @@
             </div>
         </div>
         <transition name="gameresult">
-            <div v-if="showOptionNext" class="overall_result">
+            <div v-if="showOptionNext" class="overall_result overall_result_box desktop_only">
                 <div class="title">
                     {{resultText}}
                 </div>
@@ -24,6 +24,17 @@
                 </transition>
             </div>
         </div>
+
+        <transition name="gameresultmobile">
+            <div v-if="showOptionNext" class="overall_result overall_result_box mobile_only">
+                <div class="title">
+                    {{resultText}}
+                </div>
+                <div class="action">
+                    <a @click.prevent="handleRetry">PLAY AGAIN</a>
+                </div>
+            </div>
+        </transition>
     </div>
 </template>
 

@@ -4,10 +4,17 @@
   width: 150px;
   height: 150px;
   cursor: pointer;
+  @media screen and (max-width: $screen-sm) {
+    width: 100px;
+    height: 100px;
+  }
   &.big {
     transform: scale(1.5);
     cursor: auto;
     transform-origin: center center;
+    @media screen and (max-width: $screen-sm) {
+      transform: scale(1.2);
+    }
   }
   .circle {
     width: 100%;
@@ -38,6 +45,9 @@
     background-image: url("/images/bg-pentagon.svg");
     background-position: center center;
     background-repeat: no-repeat;
+    @media screen and (max-width: $screen-sm) {
+      background-size: 75% 75%;
+    }
     .option_card {
       position: absolute;
       z-index: 1;
